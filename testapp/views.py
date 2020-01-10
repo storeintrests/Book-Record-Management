@@ -7,8 +7,11 @@ def index(request):
     return HttpResponse("Hii This is shivam")
 
 def home(request):
-    res= render(request,'testapp/home.html')
-    return res
+    que="This is zinza format"
+    level="1234567890"
+    data={'que':que, 'level':level}
+    return render(request,'testapp/home.html', context=data)
+
 
 def about(request):
     return HttpResponse("Hii This is about page")

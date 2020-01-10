@@ -8,8 +8,16 @@
   </head>
   <body>
     <div class="">
+      <h1>{{que}}</h1>
+      {% if level %}
+      {{level}}
+      {% else %}
+      <h3>level not defined</h3>
+      {% endif %}
       <h1>This is the home page</h1>
       Name: <input type="text" name="" value="">
     </div>
+    <br>
+    {% lorem %}
   </body>
 </html>
