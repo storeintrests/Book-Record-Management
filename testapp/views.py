@@ -7,7 +7,8 @@ def index(request):
     return HttpResponse("Hii This is shivam")
 
 def home(request):
-    return HttpResponse("Hii This is home page")
+    res= render(request,'testapp/home.html')
+    return res
 
 def about(request):
     return HttpResponse("Hii This is about page")
