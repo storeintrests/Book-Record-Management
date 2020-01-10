@@ -5,3 +5,13 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Hii This is shivam")
+
+def home(request):
+    return HttpResponse("Hii This is home page")
+
+def about(request):
+    return HttpResponse("Hii This is about page")
+
+
+def main(request):
+    return HttpResponse("Hii This is the main page")
