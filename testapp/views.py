@@ -14,7 +14,8 @@ def home(request):
 
 
 def about(request):
-    return HttpResponse("Hii This is about page")
+    msg="this is best message"
+    return render(request,'testapp/about.html',{'msg':msg})
 
 
 def main(request):
