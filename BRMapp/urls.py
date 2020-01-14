@@ -8,4 +8,7 @@ urlpatterns = [
     path('view-books',views.viewBooks),
     path('edit-book',views.editBook),
     path('edit',views.edit),
+    path('delete-book', views.deleteBook),
+    path('search-book', views.searchBook),
+    path('search',views.search),
 ]

@@ -1,22 +1,28 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>View all Books Record</title>
-    <link rel="stylesheet" href="{% static 'css/BRMstyle.css' %}">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="{% static 'css/BRMstyle.css'%}">
   </head>
   <body>
     <div id="header">
       <h1>Book Record Mangement</h1>
       <div id="nav">
         <a href="/BRMapp/view-books">View All</a>
-        <a href="/BRMapp/newbook">Add New</a>
-        <a href="/BRMapp/search-book">Search</a>
+        <a href="/BRMapp/new-book">Add New Book</a>
+        <a href="/BRMapp/search-book">Search Book</a>
       </div>
     </div>
     <div id="main">
-      <h2>View Book Record</h2>
+      <h2>Search Book Record</h2>
+      <form class="" action="search" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="" value="Search">
+      </form>
+      {% if books %}
       <table>
         <thead>
           <th>Book Title</th>
@@ -30,11 +36,10 @@
           <td>{{book.price}}</td>
           <td>{{book.author}}</td>
           <td>{{book.publisher}}</td>
-          <td><a href="/BRMapp/edit-book?bookid={{book.id}}" class="btn">Edit</a></td>
-          <td><a href="/BRMapp/delete-book?bookid={{book.id}}" class="btn">Delete</a</td>
         </tr>
         {% endfor %}
       </table>
+      {% endif %}
     </div>
   </body>
 </html>

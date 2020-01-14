@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from BRMapp.forms import NewBookForm
+from BRMapp.forms import NewBookForm,SearchForm
 from BRMapp.models import Book
 from django.http import HttpResponse,HttpResponseRedirect
 
@@ -17,6 +17,23 @@ def editBook(request):
      form = NewBookForm(initial=fields)
      res = render(request,'BRMapp/edit_book.html', {'form':form, 'book':book})
      return res
+
+def deleteBook(request):
+    bookid = request.GET['bookid']
+    book = Book.objects.get(id=bookid)
+    book.delete()
+    return HttpResponseRedirect('view-books')
+
+def searchBook(request):
+    form = SearchForm()
+    res = render(request,'BRMapp/search_book.html', {'form':form})
+    return res
+
+def search(request):
+    form = SearchForm(request.POST)
+    books = Book.objects.filter(title= form.data['title'])
+    res = render(request, 'BRMapp/search_book.html', {'books':books, 'form':form})
+    return res
 
 def edit(request):
     if request.method=="POST":
