@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'testapp',
+    'BRMapp',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',

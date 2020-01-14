@@ -20,6 +20,7 @@ from testapp import views
 urlpatterns = [
     path('testapp/',include('testapp.urls')),
     path('accounts/',include('accounts.urls')),
+    path('BRMapp/',include('BRMapp.urls')),
     #path('',views.index),
     #path('home',views.home),
     #path('main',views.main),
