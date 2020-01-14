@@ -6,4 +6,6 @@ urlpatterns = [
     path('newbook/',views.newBook),
     path('add',views.add),
     path('view-books',views.viewBooks),
+    path('edit-book',views.editBook),
+    path('edit',views.edit),
 ]

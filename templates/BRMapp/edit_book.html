@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load staticfiles%}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>New Book Form</title>
-    <link rel="stylesheet" href="{% static 'css/BRMstyle.css'%}">
+    <title>Edit Book Record</title>
+    <link rel="stylesheet" href="{% static 'css/BRMstyle.css' %}">
   </head>
   <body>
     <div id="header">
@@ -16,11 +16,12 @@
       </div>
     </div>
     <div id="main">
-      <h2>Add New Book Record</h2>
-      <form class="" action="/BRMapp/add" method="post">
+      <h2>Edit Book Record</h2>
+      <form class="" action="/BRMapp/edit" method="post">
         {% csrf_token %}
+        <input type="hidden" name="bookid" value="{{book.id}}">
         {{form}}
-        <input type="submit" name="" value="Add">
+        <input type="submit" name="" value="Save">
       </form>
     </div>
   </body>
