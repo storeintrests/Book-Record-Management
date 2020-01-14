@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from testapp.models import Employee
 
 # Create your views here.
 
 def index(request):
     return HttpResponse("Hii This is shivam")
+
+def employee_info_view(request):
+    employees=Employee.objects.all()
+    data={'employees':employees}
+    return render(request,'testapp/employees.html',data)
 
 def home(request):
     que="This is zinza format"

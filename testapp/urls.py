@@ -7,5 +7,6 @@ urlpatterns = [
     path('home',views.home),
     path('main',views.main),
     path('about',views.about),
+    path('employee',views.employee_info_view),
     #path('admin/', admin.site.urls),
 ]
