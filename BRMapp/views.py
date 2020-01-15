@@ -2,9 +2,29 @@ from django.shortcuts import render
 from BRMapp.forms import NewBookForm,SearchForm
 from BRMapp.models import Book
 from django.http import HttpResponse,HttpResponseRedirect
+from django.contrib.auth import authenticate, login,logout
 
 
 # Create your views here.
+def userLogin(request):
+    data = {}
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username,password=password)
+        if user:
+            login(request, user)
+            return HttpResponseRedirect('/BRMapp/view-books')
+        else:
+            data['error']="UserName and Password are incorrect"
+            res = render(request,'BRMapp/user_login.html', data)
+            return res
+    else:
+        return render(request,'BRMapp/user_login.html',data)
+
+def userLogout(request):
+    logout(request)
+    return HttpResponseRedirect('BRMapp/login/')
 
 def viewBooks(request):
     books = Book.objects.all()
@@ -52,6 +72,7 @@ def newBook(request):
     form = NewBookForm()
     res = render(request,'BRMapp/new_book.html',{'form':form})
     return res
+
 
 def add(request):
     if request.method == "POST":

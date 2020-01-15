@@ -11,4 +11,6 @@ urlpatterns = [
     path('delete-book', views.deleteBook),
     path('search-book', views.searchBook),
     path('search',views.search),
+    path('login',views.userLogin),
+    path('logout',views.userLogout),
 ]
