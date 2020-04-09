@@ -13,4 +13,5 @@ urlpatterns = [
     path('search',views.search),
     path('login',views.userLogin),
     path('logout',views.userLogout),
+    path('',views.index),
 ]

@@ -26,6 +26,9 @@ def userLogout(request):
     logout(request)
     return HttpResponseRedirect('BRMapp/login/')
 
+def index(request):
+    return HttpResponseRedirect('BRMapp/view-books')
+
 def viewBooks(request):
     books = Book.objects.all()
     res=render(request,'BRMapp/view_book.html',{'books':books})
