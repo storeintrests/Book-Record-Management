@@ -1,6 +1,15 @@
 # Book-Record-Management
 ```A Django Project which add ,update, search, delete a book from the database.``` <br>
 
+![Dashboard](https://github.com/Shiv-sharma-111/Book-Record-Management/blob/fancy/Images/Dashboard.png)
+------------------------------------------------------------------------------------------------------------
+![Add New](https://github.com/Shiv-sharma-111/Book-Record-Management/blob/fancy/Images/Add-New.png)
+---------------------------------------------------------------------------------------------------------------
+![Search](https://github.com/Shiv-sharma-111/Book-Record-Management/blob/fancy/Images/Search.png)
+--------------------------------------------------------------------------------------------------------------
+![View](https://github.com/Shiv-sharma-111/Book-Record-Management/blob/fancy/Images/View.png)
+-------------------------------------------------------------------------------------------------------------
+
 **To setup the project on your local machine:**
 
 1. Click on `Fork`.
