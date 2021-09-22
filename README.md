@@ -31,3 +31,7 @@ The project will be available at **127.0.0.1:8000**.
 Follow the given link to make a successful and valid PR: https://help.github.com/articles/creating-a-pull-request/
 
 For any doubts related to the issues, i.e., to understand the issue better etc, comment down your queries on the respective issue.
+
+
+
+
